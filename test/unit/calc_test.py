@@ -44,6 +44,15 @@ class TestCalculate(unittest.TestCase):
         self.assertRaises(TypeError, self.calc.divide, 0, 0)
         self.assertRaises(TypeError, self.calc.divide, "0", 0)
 
+    def test_square_root_method_returns_correct_result(self):
+        self.assertEqual(2, self.calc.square_root(4))
+        self.assertEqual(3, self.calc.square_root(9))
+        self.assertEqual(4, self.calc.square_root(16))
+        self.assertEqual(5, self.calc.square_root(25))
+        self.assertEqual(6, self.calc.square_root(36))
+        self.assertEqual(7, self.calc.square_root(49))
+        self.assertEqual(8, self.calc.square_root(64))
+
     @patch('app.util.validate_permissions', side_effect=mocked_validation, create=True)
     def test_multiply_method_returns_correct_result(self, _validate_permissions):
         self.assertEqual(4, self.calc.multiply(2, 2))

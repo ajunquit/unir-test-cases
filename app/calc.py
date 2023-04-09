@@ -31,10 +31,18 @@ class Calculator:
     def power(self, x, y):
         self.check_types(x, y)
         return x ** y
+    
+    def square_root(self, x):
+        self.check_types_single(x)
+        return x ** (1/2)
 
     def check_types(self, x, y):
         if not isinstance(x, (int, float)) or not isinstance(y, (int, float)):
             raise TypeError("Parameters must be numbers")
+    
+    def check_types_single(self, x):
+        if not isinstance(x, (int, float)):
+            raise TypeError("Parameter must be a number")
 
 
 if __name__ == "__main__":  # pragma: no cover

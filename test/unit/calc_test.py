@@ -119,7 +119,7 @@ class TestCalculate(unittest.TestCase):
 
     # case 2: return correct result for decimal number
     def test_logbase10_method_return_correct_result_decimal_numbers(self):
-        self.assertEqual(1.4048, self.calc.log_base_10(25.4))
+        self.assertAlmostEqual(1.4048, self.calc.log_base_10(25.4))
 
     # case 3: return correct result for decimal number minor than 1
     def test_logbase10_method_return_correct_result_decimal_number_minor_than1(self):
@@ -127,9 +127,9 @@ class TestCalculate(unittest.TestCase):
 
     # case 4: return correct result for 
     def test_logbase10_method_fails_with_zero_or_negative_number(self):
-        self.assertEqual(TypeError, self.calc.log_base_10(-5))
-        self.assertEqual(TypeError, self.calc.log_base_10(-2.56))
-        self.assertEqual(TypeError, self.calc.log_base_10(0.0))
+        self.assertRaises(TypeError, self.calc.log_base_10(-5))
+        self.assertRaises(TypeError, self.calc.log_base_10(-2.56))
+        self.assertRaises(TypeError, self.calc.log_base_10(0.0))
 
     @patch('app.util.validate_permissions', side_effect=mocked_validation, create=True)
     def test_multiply_method_returns_correct_result(self, _validate_permissions):

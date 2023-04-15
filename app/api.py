@@ -31,3 +31,48 @@ def substract(op_1, op_2):
         return ("{}".format(CALCULATOR.substract(num_1, num_2)), http.client.OK, HEADERS)
     except TypeError as e:
         return (str(e), http.client.BAD_REQUEST, HEADERS)
+    
+# multiply
+@api_application.route("/calc/multiply/<op_1>/<op_2>", methods=["GET"])
+def multiply(op_1, op_2):
+    try:
+        num_1, num_2 = util.convert_to_number(op_1), util.convert_to_number(op_2)
+        return ("{}".format(CALCULATOR.multiply(num_1, num_2)), http.client.OK, HEADERS)
+    except TypeError as e:
+        return (str(e), http.client.BAD_REQUEST, HEADERS)
+    
+# divide
+@api_application.route("/calc/divide/<op_1>/<op_2>", methods=["GET"])
+def divide(op_1, op_2):
+    try:
+        num_1, num_2 = util.convert_to_number(op_1), util.convert_to_number(op_2)
+        return ("{}".format(CALCULATOR.divide(num_1, num_2)), http.client.OK, HEADERS)
+    except TypeError as e:
+        return (str(e), http.client.BAD_REQUEST, HEADERS)
+
+# power
+@api_application.route("/calc/power/<op_1>/<op_2>", methods=["GET"])
+def power(op_1, op_2):
+    try:
+        num_1, num_2 = util.convert_to_number(op_1), util.convert_to_number(op_2)
+        return ("{}".format(CALCULATOR.power(num_1, num_2)), http.client.OK, HEADERS)
+    except TypeError as e:
+        return (str(e), http.client.BAD_REQUEST, HEADERS)
+    
+# square_root
+@api_application.route("/calc/square_root/<op_1>", methods=["GET"])
+def square_root(op_1):
+    try:
+        num_1 = util.convert_to_number(op_1)
+        return ("{}".format(CALCULATOR.square_root(num_1)), http.client.OK, HEADERS)
+    except TypeError as e:
+        return (str(e), http.client.BAD_REQUEST, HEADERS)
+    
+# log_base_10
+@api_application.route("/calc/log_base_10/<op_1>", methods=["GET"])
+def log_base_10(op_1):
+    try:
+        num_1 = util.convert_to_number(op_1)
+        return ("{}".format(CALCULATOR.log_base_10(num_1)), http.client.OK, HEADERS)
+    except TypeError as e:
+        return (str(e), http.client.BAD_REQUEST, HEADERS)

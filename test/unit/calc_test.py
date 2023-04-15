@@ -67,6 +67,29 @@ class TestCalculate(unittest.TestCase):
     # *** MULTIPLY UNIT TEST CASES ***
     # ***********************************
 
+    # case 1: returns correct results
+    def test_multiply_method_returns_correct_result(self):
+        self.assertEqual(20, self.calc.multiply(10,2)) # positive numbers
+        self.assertEqual(0, self.calc.multiply(8,0)) # positive numbers
+        self.assertEqual(100, self.calc.multiply(10,10)) # positive numbers
+        self.assertEqual(-40, self.calc.multiply(20,-2)) # positive and negative number
+        self.assertEqual(-60, self.calc.multiply(-30,2)) # positive and negative number
+        self.assertEqual(10.989, self.calc.multiply(11.1,0.99)) #decimals positive numbers
+        self.assertEqual(40, self.calc.multiply(-5,-2)) # negative numbers
+        self.assertEqual(25, self.calc.multiply(-5,-5)) # negative numbers
+        self.assertEqual(1.12, self.calc.multiply(-2,-0.56)) # decimals negative numbers
+
+    # case 2: fails with data type incorrect
+    def test_multiply_method_fails_with_nan_params(self):
+        self.assertRaises(TypeError, self.calc.multiply, "four", 2)
+        self.assertRaises(TypeError, self.calc.multiply, 2, "8888")
+        self.assertRaises(TypeError, self.calc.multiply, "six", "2")
+        self.assertRaises(TypeError, self.calc.multiply, None, 10)
+        self.assertRaises(TypeError, self.calc.multiply, 15, None)
+        self.assertRaises(TypeError, self.calc.multiply, object(), 0)
+        self.assertRaises(TypeError, self.calc.multiply, 89, object())
+        self.assertRaises(TypeError, self.calc.multiply)
+
     # ***********************************
     # *** DIVIDE UNIT TEST CASES ***
     # ***********************************

@@ -122,7 +122,7 @@ class TestCalculate(unittest.TestCase):
         self.assertEqual(1, self.calc.power(8,0)) # positive numbers
         self.assertEqual(1000, self.calc.power(10,3)) # positive numbers
         self.assertEqual(0.008, self.calc.power(5,-3)) # positive and negative number
-        self.assertEqual(1.41421356, self.calc.power(2,0.5)) # positive and negative number
+        self.assertEqual(1.4142135623730951, self.calc.power(2,0.5)) # positive and negative number
         self.assertEqual(-343.0, self.calc.power(-7, 3.0)) #decimals positive numbers
         self.assertEqual(0, self.calc.power(0,-2)) 
         self.assertEqual(0, self.calc.power(0,4)) 

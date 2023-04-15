@@ -88,10 +88,10 @@ class TestCalculate(unittest.TestCase):
 
     # case 3: return fails for data type incorrect
     def test_square_root_method_fails_data_type_incorrect(self):
-        self.assertRaises(TypeError, self.calc.square_root("five"))
-        self.assertRaises(TypeError, self.calc.square_root("*****"))
-        self.assertRaises(TypeError, self.calc.square_root("text"))
-        self.assertRaises(TypeError, self.calc.square_root("this is a exception"))
+        self.assertRaises(TypeError, self.calc.square_root, "five")
+        self.assertRaises(TypeError, self.calc.square_root, "*****")
+        self.assertRaises(TypeError, self.calc.square_root, "text")
+        self.assertRaises(TypeError, self.calc.square_root, "this is a exception")
 
     # case 4: return correct results for decimals numbers
     def test_square_root_method_return_correct_result_decimal_number(self):

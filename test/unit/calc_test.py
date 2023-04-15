@@ -18,12 +18,14 @@ class TestCalculate(unittest.TestCase):
     # *** ADD UNIT TEST CASES ***
     # ***********************************
 
+    # case 1: 
     def test_add_method_returns_correct_result(self):
         self.assertEqual(4, self.calc.add(2, 2))
         self.assertEqual(0, self.calc.add(2, -2))
         self.assertEqual(0, self.calc.add(-2, 2))
         self.assertEqual(1, self.calc.add(1, 0))
 
+    # case 2:
     def test_add_method_fails_with_nan_parameter(self):
         self.assertRaises(TypeError, self.calc.add, "2", 2)
         self.assertRaises(TypeError, self.calc.add, 2, "2")
@@ -36,6 +38,30 @@ class TestCalculate(unittest.TestCase):
     # ***********************************
     # *** SUBSTRACT UNIT TEST CASES ***
     # ***********************************
+
+    # case 1: return correct results
+    def test_substract_method_returns_correct_result(self):
+        self.assertEqual(10, self.calc.substract(10,2)) # positive numbers
+        self.assertEqual(8, self.calc.substract(8,0)) # positive numbers
+        self.assertEqual(0, self.calc.substract(10,10)) # positive numbers
+        self.assertEqual(22, self.calc.substract(20,-2)) # positive and negative number
+        self.assertEqual(-32, self.calc.substract(-30,2)) # positive and negative number
+        self.assertEqual(10.3, self.calc.substract(11.1,0.08)) #decimals positive numbers
+        self.assertEqual(-3, self.calc.substract(-5,-2)) # negative numbers
+        self.assertEqual(0, self.calc.substract(-5,-5)) # negative numbers
+        self.assertEqual(-1.44, self.calc.substract(-2,-0.56)) # decimals negative numbers
+        
+
+    # case 2: fails with data type incorrect
+    def test_substract_method_fails_with_nan_params(self):
+        self.assertRaises(TypeError, self.calc.substract, "2", 2)
+        self.assertRaises(TypeError, self.calc.substract, 2, "2")
+        self.assertRaises(TypeError, self.calc.substract, "2", "2")
+        self.assertRaises(TypeError, self.calc.substract, None, 2)
+        self.assertRaises(TypeError, self.calc.substract, 2, None)
+        self.assertRaises(TypeError, self.calc.substract, object(), 2)
+        self.assertRaises(TypeError, self.calc.substract, 2, object())
+        self.assertRaises(TypeError, self.calc.substract)
 
     # ***********************************
     # *** MULTIPLY UNIT TEST CASES ***

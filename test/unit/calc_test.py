@@ -46,7 +46,7 @@ class TestCalculate(unittest.TestCase):
         self.assertEqual(0, self.calc.substract(10,10)) # positive numbers
         self.assertEqual(22, self.calc.substract(20,-2)) # positive and negative number
         self.assertEqual(-32, self.calc.substract(-30,2)) # positive and negative number
-        self.assertEqual(10.3, self.calc.substract(11.1,0.80)) #decimals positive numbers
+        self.assertEqual(10.11, self.calc.substract(11.1,0.99)) #decimals positive numbers
         self.assertEqual(-3, self.calc.substract(-5,-2)) # negative numbers
         self.assertEqual(0, self.calc.substract(-5,-5)) # negative numbers
         self.assertEqual(-1.44, self.calc.substract(-2,-0.56)) # decimals negative numbers

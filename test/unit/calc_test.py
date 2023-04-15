@@ -103,7 +103,7 @@ class TestCalculate(unittest.TestCase):
     
     # case 6: return correct result for big numbers
     def test_square_root_method_return_correct_result_big_number(self):
-        self.assertEqual(31622.7766, self.calc.square_root(999999999))
+        self.assertEqual(31622.776585872405, self.calc.square_root(999999999))
 
     # case 5: return correct result
 
@@ -127,9 +127,9 @@ class TestCalculate(unittest.TestCase):
 
     # case 4: return correct result for 
     def test_logbase10_method_fails_with_zero_or_negative_number(self):
-        self.assertRaises(TypeError, self.calc.log_base_10(-5))
-        self.assertRaises(TypeError, self.calc.log_base_10(-2.56))
-        self.assertRaises(TypeError, self.calc.log_base_10(0.0))
+        self.assertRaises(TypeError, self.calc.log_base_10, -5)
+        self.assertRaises(TypeError, self.calc.log_base_10, -2.56)
+        self.assertRaises(TypeError, self.calc.log_base_10, 0.0)
 
     @patch('app.util.validate_permissions', side_effect=mocked_validation, create=True)
     def test_multiply_method_returns_correct_result(self, _validate_permissions):

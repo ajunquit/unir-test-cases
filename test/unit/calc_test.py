@@ -124,7 +124,6 @@ class TestCalculate(unittest.TestCase):
         self.assertEqual(0.008, self.calc.power(5,-3)) # positive and negative number
         self.assertEqual(1.4142135623730951, self.calc.power(2,0.5)) # positive and negative number
         self.assertEqual(-343.0, self.calc.power(-7, 3.0)) #decimals positive numbers
-        self.assertEqual(0, self.calc.power(0,-2)) 
         self.assertEqual(0, self.calc.power(0,4)) 
 
     # case 2: fails with data type incorrect
@@ -138,6 +137,7 @@ class TestCalculate(unittest.TestCase):
         self.assertRaises(TypeError, self.calc.power, object(), 0)
         self.assertRaises(TypeError, self.calc.power, 89, object())
         self.assertRaises(TypeError, self.calc.power, "five", [1,2,3])
+        self.assertRaises(TypeError, self.calc.power, 0,-2) 
         self.assertRaises(TypeError, self.calc.power)
 
 

@@ -35,6 +35,9 @@ class Calculator:
     #power
     def power(self, x, y):
         self.check_types(x, y)
+
+        if (x == 0 & y < 0):
+            raise TypeError("It's not possible power for base 0 and negative exponent")
         return x ** y
     
     #square_root
@@ -49,7 +52,7 @@ class Calculator:
     #log base 10
     def log_base_10(self, x):
         self.check_types_single(x)
-        
+
         if x <= 0:
             raise TypeError("It's not possible log base 10 for negative numbers including zero")
         

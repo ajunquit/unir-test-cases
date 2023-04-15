@@ -119,7 +119,7 @@ class TestCalculate(unittest.TestCase):
 
     # case 2: return correct result for decimal number
     def test_logbase10_method_return_correct_result_decimal_numbers(self):
-        self.assertAlmostEqual(1.4048, self.calc.log_base_10(25.4))
+        self.assertAlmostEqual(1.404833716619938, self.calc.log_base_10(25.4))
 
     # case 3: return correct result for decimal number minor than 1
     def test_logbase10_method_return_correct_result_decimal_number_minor_than1(self):

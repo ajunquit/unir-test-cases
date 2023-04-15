@@ -21,3 +21,45 @@ class TestApi(unittest.TestCase):
         self.assertEqual(
             response.status, http.client.OK, f"Error en la petición API a {url}"
         )
+
+    def test_api_substract(self):
+        url = f"{BASE_URL}/calc/substract/2/1"
+        response = urlopen(url, timeout=DEFAULT_TIMEOUT)
+        self.assertEqual(
+            response.status, http.client.OK, f"Error en la petición API a {url}"
+        )
+
+    def test_api_multiply(self):
+        url = f"{BASE_URL}/calc/multiply/5/9"
+        response = urlopen(url, timeout=DEFAULT_TIMEOUT)
+        self.assertEqual(
+            response.status, http.client.OK, f"Error en la petición API a {url}"
+        )
+
+    def test_api_divide(self):
+        url = f"{BASE_URL}/calc/divide/18/2"
+        response = urlopen(url, timeout=DEFAULT_TIMEOUT)
+        self.assertEqual(
+            response.status, http.client.OK, f"Error en la petición API a {url}"
+        )
+
+    def test_api_power(self):
+        url = f"{BASE_URL}/calc/power/2/3"
+        response = urlopen(url, timeout=DEFAULT_TIMEOUT)
+        self.assertEqual(
+            response.status, http.client.OK, f"Error en la petición API a {url}"
+        )
+
+    def test_api_square_root(self):
+        url = f"{BASE_URL}/calc/square_root/16"
+        response = urlopen(url, timeout=DEFAULT_TIMEOUT)
+        self.assertEqual(
+            response.status, http.client.OK, f"Error en la petición API a {url}"
+        )
+
+    def test_api_log_base_10(self):
+        url = f"{BASE_URL}/calc/log_base_10/1000"
+        response = urlopen(url, timeout=DEFAULT_TIMEOUT)
+        self.assertEqual(
+            response.status, http.client.OK, f"Error en la petición API a {url}"
+        )

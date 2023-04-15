@@ -115,6 +115,31 @@ class TestCalculate(unittest.TestCase):
     # ***********************************
     # *** POWER UNIT TEST CASES ***
     # ***********************************
+    
+    # case 1: returns correct results
+    def test_power_method_returns_correct_result(self):
+        self.assertEqual(25, self.calc.power(5,2)) # positive numbers
+        self.assertEqual(1, self.calc.power(8,0)) # positive numbers
+        self.assertEqual(1000, self.calc.power(10,3)) # positive numbers
+        self.assertEqual(0.008, self.calc.power(5,-3)) # positive and negative number
+        self.assertEqual(1.41421356, self.calc.power(2,0.5)) # positive and negative number
+        self.assertEqual(-343.0, self.calc.power(-7, 3.0)) #decimals positive numbers
+        self.assertEqual(0, self.calc.power(0,-2)) 
+        self.assertEqual(0, self.calc.power(0,4)) 
+
+    # case 2: fails with data type incorrect
+    def test_power_method_fails_with_nan_params(self):
+        self.assertRaises(TypeError, self.calc.power, "four", 2)
+        self.assertRaises(TypeError, self.calc.power, 2, "9")
+        self.assertRaises(TypeError, self.calc.power, 0, "-4")
+        self.assertRaises(TypeError, self.calc.power, "nine", "2")
+        self.assertRaises(TypeError, self.calc.power, None, 10)
+        self.assertRaises(TypeError, self.calc.power, 15, None)
+        self.assertRaises(TypeError, self.calc.power, object(), 0)
+        self.assertRaises(TypeError, self.calc.power, 89, object())
+        self.assertRaises(TypeError, self.calc.power, "five", [1,2,3])
+        self.assertRaises(TypeError, self.calc.power)
+
 
     # ***********************************
     # *** SQUARE ROOT UNIT TEST CASES ***

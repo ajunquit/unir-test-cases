@@ -41,7 +41,7 @@ class TestCalculate(unittest.TestCase):
 
     # case 1: return correct results
     def test_substract_method_returns_correct_result(self):
-        self.assertEqual(10, self.calc.substract(10,2)) # positive numbers
+        self.assertEqual(8, self.calc.substract(10,2)) # positive numbers
         self.assertEqual(8, self.calc.substract(8,0)) # positive numbers
         self.assertEqual(0, self.calc.substract(10,10)) # positive numbers
         self.assertEqual(22, self.calc.substract(20,-2)) # positive and negative number

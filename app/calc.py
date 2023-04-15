@@ -36,7 +36,7 @@ class Calculator:
     def power(self, x, y):
         self.check_types(x, y)
 
-        if (x == 0 & y < 0):
+        if (x == 0 and y < 0):
             raise TypeError("It's not possible power for base 0 and negative exponent")
         return x ** y
     

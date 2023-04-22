@@ -2,6 +2,7 @@ import http.client
 import os
 import unittest
 from urllib.request import urlopen
+from urllib.error import HTTPError
 
 import pytest
 
@@ -49,9 +50,11 @@ class TestApi(unittest.TestCase):
 
     def test_api_divide(self):
         url = f"{BASE_URL}/calc/divide/1/0"
-        response = urlopen(url, timeout=DEFAULT_TIMEOUT)
+        with self.assertRaises(HTTPError) as cm:
+            urlopen(url, timeout=DEFAULT_TIMEOUT)
+
         self.assertEqual(
-            response.status, http.client.BAD_REQUEST, f"Error en la petición API a {url}"
+            cm.exception.code, http.client.BAD_REQUEST, f"Unexpected error code from {url}"
         )
 
     def test_api_power(self):

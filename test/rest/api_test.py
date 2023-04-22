@@ -51,7 +51,7 @@ class TestApi(unittest.TestCase):
         url = f"{BASE_URL}/calc/divide/1/0"
         response = urlopen(url, timeout=DEFAULT_TIMEOUT)
         self.assertEqual(
-            response.status, http.client.OK, f"Error en la petición API a {url}"
+            response.status, http.client.BAD_REQUEST, f"Error en la petición API a {url}"
         )
 
     def test_api_power(self):
